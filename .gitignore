@@ -1,0 +1,9 @@
+# private files — never publish these to GitHub
+*.pdf
+portrait.jpg
+portrait.PNG
+style.png
+info.md
+.claude/
+.DS_Store
+assets/portrait.png
