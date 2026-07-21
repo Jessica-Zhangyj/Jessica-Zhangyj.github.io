@@ -315,6 +315,11 @@ html[data-theme="light"] .hero-name {
   border: 1px solid var(--chip-border); background: var(--chip-bg);
 }
 .proj-link:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 4px 14px var(--glow-a); }
+.proj-badge {
+  font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+  padding: 3px 12px; border-radius: 999px; color: var(--accent);
+  border: 1px solid var(--accent-2); background: var(--chip-bg);
+}
 
 /* art grid */
 .art-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
