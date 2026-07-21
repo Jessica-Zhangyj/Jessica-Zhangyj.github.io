@@ -96,6 +96,29 @@ a:hover { text-decoration: underline; }
   50% { opacity: 1; transform: scale(1.1); }
 }
 
+/* ---- light-theme silver shimmer ---- */
+html[data-theme="light"] .star {
+  background: #fff;
+  box-shadow: 0 0 4px rgba(180, 190, 255, 0.9), 0 0 2px rgba(255, 255, 255, 0.95);
+}
+/* slow drifting silvery sheen band across the page */
+html[data-theme="light"] #nebula::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(115deg,
+    transparent 22%,
+    rgba(255, 255, 255, 0.32) 43%,
+    rgba(198, 208, 255, 0.28) 50%,
+    rgba(255, 255, 255, 0.32) 57%,
+    transparent 78%);
+  background-size: 300% 300%;
+  mix-blend-mode: screen;
+  animation: sheenDrift 15s ease-in-out infinite;
+}
+@keyframes sheenDrift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 /* ============ nav ============ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -158,6 +181,21 @@ main { max-width: 1060px; margin: 0 auto; padding: 0 5vw; }
   margin: 18px 0 6px;
 }
 html[data-lang="zh"] .hero-name { letter-spacing: 0.06em; }
+/* metallic silver light sweeping across the name (light theme) */
+html[data-theme="light"] .hero-name {
+  background: linear-gradient(100deg,
+    #372c60 0%, #6f61c9 22%, #b7b1e6 40%,
+    #f3f2ff 48%, #ffffff 50%, #f3f2ff 52%,
+    #b7b1e6 60%, #6f61c9 78%, #372c60 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: silverSweep 7s linear infinite;
+}
+@keyframes silverSweep {
+  0% { background-position: 160% 0; }
+  100% { background-position: -60% 0; }
+}
 .hero-alias { color: var(--muted); font-size: 1.02rem; margin-bottom: 22px; }
 .hero-role {
   font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.4rem);
