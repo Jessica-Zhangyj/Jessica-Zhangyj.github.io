@@ -231,13 +231,9 @@ html[data-theme="light"] .hero-name {
   position: relative; z-index: 1;
   width: min(78%, 340px);
   aspect-ratio: 1 / 1; height: auto;
-  object-fit: cover; object-position: top;
-  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 99%),
-    linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, #000 82%, transparent 99%),
-    linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
-  mask-composite: intersect;
+  object-fit: cover; object-position: center;
+  border-radius: 50%;
+  border: 3px solid var(--card-border);
   filter: drop-shadow(0 0 34px var(--glow-a));
 }
 .bf { position: absolute; z-index: 2; animation: floaty 5.5s ease-in-out infinite; }
